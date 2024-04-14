@@ -26,9 +26,12 @@ header {
 
             a {
                 text-decoration: none;
-                color: variaveis.$cor-primaria;
+                @include mixins.ff-fs-cl(variaveis.$ft-textos, 1rem, variaveis.$cor-primaria);
                 font-family: 500;
-                font-family: variaveis.$ft-textos;
+                &:hover {
+                    color: #000000;
+                    font-weight: 700;
+                }
             }
         }
     }
@@ -70,8 +73,15 @@ header {
             border: none;
             outline: none;
             border-radius: 66px;
-            background: variaveis.$cor-default;
-            font-size: 1.3rem
+            background: variaveis.$cor-secundaria;
+            font-size: 1.3rem;
+            box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.233);
+            cursor: pointer;
+            opacity: 0.3;
+            transition: opacity 0.5s;
+            &:hover {
+                opacity: 1.0;
+            }
         }
     }
 }
